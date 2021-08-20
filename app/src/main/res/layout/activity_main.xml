@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sliderCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        android:layout_margin="5dp">
+        <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+            android:id="@+id/carousel"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:showTopShadow="true"
+            app:topShadowAlpha="0.6"
+            app:topShadowHeight="32dp"
+
+            app:showBottomShadow="true"
+            app:bottomShadowAlpha="0.6"
+            app:bottomShadowHeight="64dp"
+
+            app:showCaption="true"
+            app:captionMargin="0dp"
+            app:captionTextSize="14sp"
+
+            app:showIndicator="true"
+            app:indicatorMargin="0dp"
+
+            app:imageScaleType="centerCrop"
+
+            app:carouselBackground="#0000ffff"
+            app:imagePlaceholder="@mipmap/ic_launcher"
+
+            app:carouselPadding="0dp"
+            app:carouselPaddingBottom="0dp"
+            app:carouselPaddingEnd="0dp"
+            app:carouselPaddingStart="0dp"
+            app:carouselPaddingTop="0dp"
+
+            app:showNavigationButtons="false"
+            app:previousButtonLayout="@layout/previous_button_layout"
+            app:previousButtonId="@id/btn_previous"
+            app:previousButtonMargin="4dp"
+            app:nextButtonLayout="@layout/next_button_layout"
+            app:nextButtonId="@id/btn_next"
+            app:nextButtonMargin="4dp"
+
+            app:carouselType="BLOCK"
+            app:carouselGravity="CENTER"
+
+            app:scaleOnScroll="true"
+            app:scalingFactor="0.15"
+            app:autoWidthFixing="true"
+            app:autoPlay="true"
+            app:autoPlayDelay="3000"
+            app:infiniteCarousel="true"
+            app:touchToPause="true" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/textCardView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:layout_below="@id/sliderCardView">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#FF3D00"
+
+            android:fontFamily="serif-monospace"
+            android:text="ঘরে বসে কেনাকাটার সহজ সমাধান"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:layout_below="@id/textCardView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                app:icon="@drawable/icon_store"
+                app:iconSize="50dp"
+                android:textSize="25sp"
+                android:text="মুদিখানা"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                app:icon="@drawable/icon_pharmacy"
+                app:iconSize="50dp"
+                android:text="ফার্মেসি"
+                android:background="#09FFFF"
+                android:textSize="25sp"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
