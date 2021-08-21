@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             app:autoPlay="true"
+
             app:autoPlayDelay="3000"
             app:autoWidthFixing="true"
 
@@ -86,6 +87,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/buttonCardView"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@id/textCardView"
@@ -98,29 +100,45 @@
             android:weightSum="1">
 
             <Button
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_weight=".5"
+                android:id="@+id/btnGrocery"
                 android:text="মুদিখানা"
                 android:textSize="25sp"
+                android:visibility="visible"
                 app:icon="@drawable/icon_store"
-                app:iconSize="50dp" />
+                app:iconSize="50dp"
+                app:iconTint="@color/white" />
 
             <Button
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_weight=".5"
+                android:id="@+id/btnPhermecy"
+                android:backgroundTint="@color/black"
                 android:text="ফার্মেসি"
                 android:textSize="25sp"
+                android:visibility="visible"
                 app:icon="@drawable/icon_pharmacy"
                 app:iconSize="50dp" />
 
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/buttonCardView">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/shopListView"
+            />
     </androidx.cardview.widget.CardView>
 </RelativeLayout>
