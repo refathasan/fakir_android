@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "519100241394",
+    "project_id": "fakirhat-ecommerce",
+    "storage_bucket": "fakirhat-ecommerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519100241394:android:257507bf42d27338a1876b",
+        "android_client_info": {
+          "package_name": "xyz.songsari.fakirhat_ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519100241394-r9r8l90rh6l839s5gihvrcrt7so7dmmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFaNYo06hsOrmOGO1TvKi3EVgEuyeSswg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519100241394-r9r8l90rh6l839s5gihvrcrt7so7dmmi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -9,11 +9,11 @@
         android:weightSum="1">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="50dp"
 
             android:src="@drawable/icon_store"
             android:id="@+id/list_icon_store"
-            android:layout_weight=".25"/>
+            android:layout_weight=".33"/>
         <TextView
             android:layout_height="match_parent"
             android:layout_width="match_parent"
@@ -21,21 +21,17 @@
             android:id="@+id/list_icon_text"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="25sp"
-            android:layout_weight=".25"/>
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="serif-monospace"
+            android:layout_weight=".33"/>
         <ImageButton
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/list_item_phone_call"
-            android:src="@android:drawable/sym_action_call"
-            android:layout_weight=".25"/>
-        <ImageButton
-            style="@style/Widget.MaterialComponents.Button.Icon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/list_item_external"
-            android:src="@android:drawable/stat_sys_phone_call_forward"
-            android:layout_weight=".25"/>
+            android:id="@+id/list_item_details"
+            android:src="@android:drawable/ic_dialog_info"
+            android:layout_weight=".34"/>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

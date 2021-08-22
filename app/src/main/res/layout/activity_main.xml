@@ -5,14 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+   <com.google.android.material.appbar.AppBarLayout
+       android:layout_width="match_parent"
+       android:id="@+id/appbarLatout"
+       android:layout_height="wrap_content">
 
+       <androidx.appcompat.widget.Toolbar
+           android:id="@+id/toolBar"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@drawable/toolbar_back"
+           android:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"
+           app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+           tools:ignore="MissingClass" />
+   </com.google.android.material.appbar.AppBarLayout>
     <androidx.cardview.widget.CardView
+        android:layout_below="@id/appbarLatout"
         android:id="@+id/sliderCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         app:cardCornerRadius="0dp">
-
         <org.imaginativeworld.whynotimagecarousel.ImageCarousel
             android:id="@+id/carousel"
             android:layout_width="match_parent"

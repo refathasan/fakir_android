@@ -1,31 +1,64 @@
 package xyz.songsari.fakirhat_ecommerce;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+
+import android.graphics.Color;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
 
 import java.util.ArrayList;
+
 import java.util.List;
+
+import xyz.songsari.fakirhat_ecommerce.adapters.MainStoreAdapter;
+import xyz.songsari.fakirhat_ecommerce.model.StoreTempModel;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageCarousel carousel;
     private Button btnGrocerry;
     private Button btnPhermacy;
+//    ActionBar actionBar = getSupportActionBar();
+    // List<StoreTempModel> temp = new ArrayList<StoreTempModel>();
+
+    ArrayList<StoreTempModel> tempModel;
+    MainStoreAdapter adapter;
+    Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mToolbar = findViewById(R.id.toolBar);
         carousel = findViewById(R.id.carousel);
         btnGrocerry = findViewById(R.id.btnGrocery);
         btnPhermacy = findViewById(R.id.btnPhermecy);
+        RecyclerView recyclerView = findViewById(R.id.shopListView);
+
+
+        tollBarSetup();
+        //tempModel.
+        tempModel = new ArrayList<>();
+        tempModel.add(new StoreTempModel("Abu Store"));
+        tempModel.add(new StoreTempModel("Babu Store"));
+        tempModel.add(new StoreTempModel("Kabu Store"));
+        tempModel.add(new StoreTempModel("Dabu Store"));
+        tempModel.add(new StoreTempModel("Labu Store"));
+        adapter = new MainStoreAdapter(MainActivity.this, tempModel);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<CarouselItem> list = new ArrayList<>();
         list.add(
                 new CarouselItem("https://images.unsplash.com/photo-1532581291347-9c39cf10a73c?w=1080",
@@ -50,6 +83,15 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Grocerry Clicked", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void tollBarSetup() {
+        setSupportActionBar(mToolbar);
+        // actionBar.setDisplayHomeAsUpEnabled(true);
+        //actionBar.setHomeAsUpIndicator(R.drawable.bar);
+
+        mToolbar.setTitleTextColor(Color.rgb(255, 255, 255));
+
     }
 
 }
