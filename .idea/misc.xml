@@ -6,10 +6,13 @@
         <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/drawable/bar.xml" value="0.36614583333333334" />
         <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/drawable/bg_overlay.xml" value="0.21354166666666666" />
         <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/drawable/burron_boarder.xml" value="0.19322916666666667" />
+        <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/drawable/button_boarder.xml" value="0.21302083333333333" />
         <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2140625" />
         <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/drawable/toolbar_back.xml" value="0.21145833333333333" />
+        <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/layout/activity_auth.xml" value="0.196875" />
         <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
         <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/layout/app_bar.xml" value="0.153125" />
+        <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/layout/fragment_sign_up.xml" value="0.33" />
         <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/layout/image_slider_layout_item.xml" value="0.19739583333333333" />
         <entry key="..\:/FLUTTER_WORKSPACE/Fakirhat_Ecommerce/app/src/main/res/layout/shop_item.xml" value="0.17708333333333334" />
       </map>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="center">
+       <Button android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="SignUp With Google"
+           android:background="@drawable/button_boarder"
+           android:layout_marginStart="80dp"
+           android:layout_marginEnd="80dp"
+           android:layout_marginBottom="20dp"
+           android:layout_marginTop="20dp"
+           android:theme="@style/AppTheme"
+           style="@style/TextAppearance.AppCompat.Button.Custom"
+           android:id="@+id/signUpGoogle"/>
+
+        <Button
+            android:id="@+id/signEmail"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signUpGoogle"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_boarder"
+            android:text="Sign Up with Email"
+            android:theme="@style/AppTheme"
+            style="@style/TextAppearance.AppCompat.Button.Custom" />
+        <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signEmail"
+            android:text="Sign Up With Phone"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_boarder"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:theme="@style/AppTheme"
+            style="@style/TextAppearance.AppCompat.Button.Custom"
+            android:id="@+id/signUpPhone"/>
+
+    </RelativeLayout>
+</FrameLayout>

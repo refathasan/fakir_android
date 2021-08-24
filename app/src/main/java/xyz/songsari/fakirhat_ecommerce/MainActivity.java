@@ -3,10 +3,14 @@ package xyz.songsari.fakirhat_ecommerce;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 
 import android.os.Bundle;
@@ -31,14 +35,15 @@ public class MainActivity extends AppCompatActivity {
     private ImageCarousel carousel;
     private Button btnGrocerry;
     private Button btnPhermacy;
-//    ActionBar actionBar = getSupportActionBar();
+    //    ActionBar actionBar = getSupportActionBar();
     // List<StoreTempModel> temp = new ArrayList<StoreTempModel>();
-
     ArrayList<StoreTempModel> tempModel;
     MainStoreAdapter adapter;
     Toolbar mToolbar;
     ImageView userBar;
     ImageView expendBar;
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +95,10 @@ public class MainActivity extends AppCompatActivity {
         userBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "User Clicked", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MainActivity.this, AuthActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
         expendBar.setOnClickListener(new View.OnClickListener() {

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fakirhat_Ecommerce">
         <activity
+            android:name=".AuthActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -18,9 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <meta-data-->
-<!--            android:name="com.google.firebase.ml.vision.DEPENDENCIES"-->
-<!--            android:value="label" />-->
     </application>
 
 </manifest>
