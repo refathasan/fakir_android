@@ -8,16 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SignUpFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SignUpFragment extends Fragment {
+public class SignUpFragment extends Fragment  implements View.OnClickListener {
     Button signUpWithGoogle;
     Button signUpWithEmail;
     Button signUpWithMobile;
+    TextView loginTextView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -63,6 +66,43 @@ public class SignUpFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false);
+
+        View rootView =  inflater.inflate(R.layout.fragment_sign_up, container, false);
+        signUpWithGoogle = rootView.findViewById(R.id.sign_up_google);
+        signUpWithEmail = rootView.findViewById(R.id.sign_up_email);
+        signUpWithMobile = rootView.findViewById(R.id.sign_up_phone);
+        loginTextView = rootView.findViewById(R.id.go_to_login);
+        
+        signUpWithGoogle.setOnClickListener(this);
+
+        signUpWithEmail.setOnClickListener(this);
+        signUpWithMobile.setOnClickListener(this);
+        loginTextView.setOnClickListener(this);
+        return  rootView;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.sign_up_google:
+                Toast.makeText(getContext(), " Google Button Clicked",
+                        Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.sign_up_email:
+                Toast.makeText(getContext(), " Email Button Clicked",
+                        Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.sign_up_phone:
+                Toast.makeText(getContext(), " Phone Button Clicked",
+                        Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.go_to_login:
+                Toast.makeText(getContext(), " Go to Login Clicked",
+                        Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+
     }
 }

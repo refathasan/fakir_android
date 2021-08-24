@@ -14,6 +14,8 @@ import android.content.Intent;
 import android.graphics.Color;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -107,6 +109,24 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Expend Bar Clicked", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+   boolean doubleBackToExitPressedOnce = false;
+    @Override
+    public void onBackPressed() {
+        if(doubleBackToExitPressedOnce)
+        {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(MainActivity.this, "Click again to exit", Toast.LENGTH_SHORT).show();
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        },2000);
+
     }
 
     private void tollBarSetup() {
