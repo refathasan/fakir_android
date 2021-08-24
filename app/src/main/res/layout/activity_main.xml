@@ -5,27 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-   <com.google.android.material.appbar.AppBarLayout
-       android:layout_width="match_parent"
-       android:id="@+id/appbarLatout"
-       android:layout_height="wrap_content">
 
-       <androidx.appcompat.widget.Toolbar
-           android:id="@+id/toolBar"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:background="@drawable/toolbar_back"
-           android:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar"
-           app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-           tools:ignore="MissingClass" />
-   </com.google.android.material.appbar.AppBarLayout>
+    <include layout="@layout/app_bar" />
+
     <androidx.cardview.widget.CardView
-        android:layout_below="@id/appbarLatout"
         android:id="@+id/sliderCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
         android:layout_margin="5dp"
         app:cardCornerRadius="0dp">
+
         <org.imaginativeworld.whynotimagecarousel.ImageCarousel
             android:id="@+id/carousel"
             android:layout_width="match_parent"
@@ -81,11 +71,11 @@
         android:id="@+id/textCardView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
         android:layout_below="@id/sliderCardView"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:padding="5dp">
 
         <TextView
@@ -113,13 +103,13 @@
             android:weightSum="1">
 
             <Button
+                android:id="@+id/btnGrocery"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_weight=".5"
-                android:id="@+id/btnGrocery"
                 android:text="মুদিখানা"
                 android:textSize="25sp"
                 android:visibility="visible"
@@ -128,13 +118,13 @@
                 app:iconTint="@color/white" />
 
             <Button
+                android:id="@+id/btnPhermecy"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_weight=".5"
-                android:id="@+id/btnPhermecy"
                 android:backgroundTint="@color/black"
                 android:text="ফার্মেসি"
                 android:textSize="25sp"
@@ -144,14 +134,15 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/buttonCardView">
+
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/shopListView"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

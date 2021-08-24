@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -36,15 +37,18 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<StoreTempModel> tempModel;
     MainStoreAdapter adapter;
     Toolbar mToolbar;
-
+    ImageView userBar;
+    ImageView expendBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mToolbar = findViewById(R.id.toolBar);
+        mToolbar = findViewById(R.id.toolbar);
         carousel = findViewById(R.id.carousel);
         btnGrocerry = findViewById(R.id.btnGrocery);
         btnPhermacy = findViewById(R.id.btnPhermecy);
+        userBar = findViewById(R.id.user_bar);
+        expendBar = findViewById(R.id.expanded_bar);
         RecyclerView recyclerView = findViewById(R.id.shopListView);
 
 
@@ -83,13 +87,25 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Grocerry Clicked", Toast.LENGTH_SHORT).show();
             }
         });
+        userBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "User Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+        expendBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Expend Bar Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void tollBarSetup() {
         setSupportActionBar(mToolbar);
         // actionBar.setDisplayHomeAsUpEnabled(true);
         //actionBar.setHomeAsUpIndicator(R.drawable.bar);
-
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         mToolbar.setTitleTextColor(Color.rgb(255, 255, 255));
 
     }
