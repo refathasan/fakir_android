@@ -16,6 +16,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -32,7 +33,7 @@ import java.util.List;
 import xyz.songsari.fakirhat_ecommerce.adapters.MainStoreAdapter;
 import xyz.songsari.fakirhat_ecommerce.model.StoreTempModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private ImageCarousel carousel;
     private Button btnGrocerry;
@@ -97,8 +98,10 @@ public class MainActivity extends AppCompatActivity {
         userBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(MainActivity.this, AuthActivity.class);
+                intent = new Intent(getBaseContext(), AuthActivity.class);
+
                 startActivity(intent);
+                Log.i("MAIN-->",intent.toString());
                 finish();
 
             }
@@ -110,24 +113,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-   boolean doubleBackToExitPressedOnce = false;
-    @Override
-    public void onBackPressed() {
-        if(doubleBackToExitPressedOnce)
-        {
-            super.onBackPressed();
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(MainActivity.this, "Click again to exit", Toast.LENGTH_SHORT).show();
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        },2000);
-
-    }
+//   boolean doubleBackToExitPressedOnce = false;
+//    @Override
+//    public void onBackPressed() {
+//        if(doubleBackToExitPressedOnce)
+//        {
+//            super.onBackPressed();
+//            return;
+//        }
+//        this.doubleBackToExitPressedOnce = true;
+//        Toast.makeText(MainActivity.this, "Click again to exit", Toast.LENGTH_SHORT).show();
+//        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                doubleBackToExitPressedOnce = false;
+//            }
+//        },2000);
+//
+//    }
 
     private void tollBarSetup() {
         setSupportActionBar(mToolbar);

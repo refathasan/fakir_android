@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class AuthActivity extends AppCompatActivity {
+public class AuthActivity extends BaseActivity {
 
     Fragment signUpFragment = new SignUpFragment();
     Toolbar toolbar;
@@ -38,30 +38,35 @@ public class AuthActivity extends AppCompatActivity {
         userImageView.setEnabled(false);
         expendImageView.setEnabled(false);
         expendImageView.setVisibility(View.GONE);
-        appbarActions();
+
 
     }
-
-       boolean doubleBackToExitPressedOnce = false;
-    //    onBackPressed();
 
     @Override
-    public void onBackPressed() {
-        if(doubleBackToExitPressedOnce)
-        {
-            super.onBackPressed();
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(AuthActivity.this, "Click again to exit", Toast.LENGTH_SHORT).show();
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        },2000);
-
+    protected void onStart() {
+        super.onStart();
+        appbarActions();
     }
+    // boolean doubleBackToExitPressedOnce = false;
+    //    onBackPressed();
+
+//    @Override
+//    public void onBackPressed() {
+//        if(doubleBackToExitPressedOnce)
+//        {
+//            super.onBackPressed();
+//            return;
+//        }
+//        this.doubleBackToExitPressedOnce = true;
+//        Toast.makeText(AuthActivity.this, "Click again to exit", Toast.LENGTH_SHORT).show();
+//        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                doubleBackToExitPressedOnce = false;
+//            }
+//        },2000);
+//
+//    }
 
     private void appbarActions() {
         setSupportActionBar(toolbar);
@@ -71,7 +76,7 @@ public class AuthActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                startActivity(new Intent(AuthActivity.this, MainActivity.class));
-                finish();
+               finish();
             }
         });
     }

@@ -53,6 +53,7 @@ public class MainStoreAdapter extends RecyclerView.Adapter<MainStoreAdapter.Main
 
     @Override
     public int getItemCount() {
+
         return storeModel.size();
     }
 
